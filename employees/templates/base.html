@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Employee Management System{% endblock %}</title>
+    {% block css_style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock css_style %}
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">Employee Management System</span>
+        <div class="nav-links">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'add_employee' %}" class="nav-link">Add Employee</a>
+            <a href="{% url 'update_delete' %}" class="nav-link">Create/Delete</a>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.addEventListener('mouseover', function() {
+                    this.style.boxShadow = '0 2px 5px rgba(255,255,255,0.1)';
+                });
+                row.addEventListener('mouseout', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

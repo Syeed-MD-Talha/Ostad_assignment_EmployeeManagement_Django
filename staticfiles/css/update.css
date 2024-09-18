@@ -1,0 +1,83 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+h1{
+    text-align: center;
+    color:#ddd33ed9;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: italic;
+    font-family: cursive;
+    /* text-shadow: -7px -17px 2px rgb(212, 85, 85); */
+}
+
+.form-container {
+    max-width: 501px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(194, 181, 110);
+    /* box-shadow: 0 0 20px rgb(110, 194, 151); */
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color:#d8dd3ed9;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: cursive;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+.form-group input[readonly] {
+    background-color: #252525;
+    border-color: #333;
+    cursor: not-allowed;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #92801c;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: cursive;
+}
+.btn-submit:hover {
+    background-color: #29b93a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+}
+
+.errorlist{color:red;}

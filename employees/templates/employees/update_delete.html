@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Employee List{% endblock %}
+
+{% block content %}
+    <h1>Employee List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Description</th>
+                <th >Edit Action</th>
+                <th>Delete Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.designation }}</td>
+                <td>{{ employee.description|truncatewords:20 }}</td>
+                <td>
+                    <a href="{% url 'update_employee' employee.id %}" class="btn edit_button">Edit</a>
+                </td>
+                <td>
+                    <a href="{% url 'delete_employee' employee.id %}" class="btn delete_button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

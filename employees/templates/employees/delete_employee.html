@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Delete Employee - {{ employee.name }}{% endblock %}
+
+{% block css_style %}
+{{ block.super }}
+<style>
+    .delete-page-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 60px);
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .delete-modal {
+        background-color: #1e2a3a;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .delete-modal-header {
+        background-color: #003752;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .delete-modal-header h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .delete-modal-body {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .delete-warning-text {
+        color: #e0e0e0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .delete-employee-name {
+        color: #00a8cc;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .delete-warning-subtext {
+        color: #ff6b6b;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    .delete-modal-footer {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background-color: #1a2433;
+    }
+
+    .delete-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .delete-btn-danger {
+        background-color: #ff6b6b;
+        color: #ffffff;
+        margin-right: 10px;
+    }
+
+    .delete-btn-danger:hover {
+        background-color: #ff4757;
+    }
+
+    .delete-btn-secondary {
+        background-color: #576574;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .delete-btn-secondary:hover {
+        background-color: #8395a7;
+    }
+</style>
+{% endblock css_style %}
+
+{% block content %}
+<div class="delete-page-container">
+    <div class="delete-modal">
+        <div class="delete-modal-header">
+            <h1>Delete Employee</h1>
+        </div>
+        <div class="delete-modal-body">
+            <p class="delete-warning-text">Are you sure you want to delete the employee:</p>
+            <p class="delete-employee-name">"{{ employee.name }}"?</p>
+            <p class="delete-warning-subtext">This action cannot be undone.</p>
+        </div>
+        <div class="delete-modal-footer">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="delete-btn delete-btn-danger">Confirm Delete</button>
+            </form>
+            <a href="{% url 'update_delete' %}" class="delete-btn delete-btn-secondary">Cancel</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

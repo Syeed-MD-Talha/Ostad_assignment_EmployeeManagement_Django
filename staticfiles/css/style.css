@@ -1,0 +1,120 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #001023;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #ffffff;
+    /* color:beige; */
+    margin-bottom: 30px;
+    font-family: cursive;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+th {
+    background-color: #003752;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-family: cursive;
+    text-align: center;
+}
+tr:hover {
+    background-color: rgba(103, 104, 180, 0.225);
+}
+.btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: #244e6afc;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    width: 100px;
+    text-align: center;
+}
+.btn:hover {
+    background-color: cyan;
+    color: black;
+    font-weight: bold;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #003752;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: beige;
+    font-family: cursive;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-family: cursive;
+}
+.nav-link {
+    text-decoration: none;
+    color: brie;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color:beige;
+}
+.nav-link:hover {
+    color: orange;
+}
+tbody {
+    background-color: #0d191f;
+}
+.edit_button{
+    background-color: #ffa500a8;
+  color: white;
+  font-weight: 550;
+}
+.delete_button{
+    background-color: #f45c5cc4;
+    color: white;
+    font-weight: 550;
+}
+
+.edit_button:hover{background-color: orange;color:black;font-weight: bold;}
+.delete_button:hover{background-color:red;color:black;font-weight: bold;}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+}
